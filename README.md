@@ -8,14 +8,14 @@ The task is to write an automated test validating that a user can create an acco
 1. Go to [Intelycare Careers](https://portal.dev.qa.automation1.legacy.intelycare.com/apply/career.html)
     a. Create the account using the email address. It be can any alphanumeric character with the domain name **@mailinator.com** and any password. 
     
-![login page](./resources/intelycare-careers.png)
+![login page](./readme-resources/intelycare-careers.png)
 
 2. On the Basic Info screen, validate below two test conditions
     a. The continue button is unclickable without mandatory fields
     b. Filling all the fields enable the Continue button
     c. Clicking on the continue button page redirects to OTP page 
 
-![basic info page](./resources/basic-info.png)
+![basic info page](./readme-resources/basic-info.png)
 
 **Note**: Please enter 10 digit phone number (7589577506) and 5 digit zip code (02090) for test data during testing.
 
