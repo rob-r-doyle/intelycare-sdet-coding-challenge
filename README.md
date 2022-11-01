@@ -21,8 +21,8 @@ The task is to write an automated test validating that a user can create an acco
 
 ## Test Framework Instructions
 
-1. Download Sample Framework framework_template.zip
-2. Add test file on /test/specs folder
+1. Fork this repository to your own GitHub account. You'll be submitting your final repository to us to review.
+2. Add test files in /test/specs folder
 3. To run your tests, execute: 
 ```
 $ npm install
