@@ -28,20 +28,3 @@ The task is to write an automated test validating that a user can create an acco
 $ npm install
 $ npx wdio run wdio.conf.js
 ```
-
-**This the the end of the required details of the Coding Challenge for an SDET I and SDET II candidates. Details below are required for Senior SDET roles and optional for SDET I and SDET II**
-
-***
-### Required Details for Senior SDET
-##### -----Optional for SDET I and SDET II-----
-
-1. Page Object Model 
-2. Package.json should have all the required libraries
-3. Action utility file (Library) to handle user actions with fluent waits. 
-4. Properties file from where basic information is read. 
-5. Any Test Report 
-
-**Good to Have in addition to the above:**
-1. Parallel execution
-2. Multiple spec files and test suite
-3. Docker image
