@@ -1,4 +1,15 @@
 exports.config = {
+
+    /************************
+    * Custom configurations *
+    ************************/
+    goodUser: 'rrd-test@mailinator.com',
+    goodPass: 'ForTesting0nly!',
+    badPass: 'SuperSecretPassword!',
+    phone: '7589577506',
+    zipCode: '02090',
+
+
     //
     // ====================
     // Runner Configuration
