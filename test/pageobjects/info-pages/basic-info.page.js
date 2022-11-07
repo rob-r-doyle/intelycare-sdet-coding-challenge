@@ -43,11 +43,9 @@ class BasicInfoPage extends Page {
     ddOverlayQualifications = new DropdownOverlayField('[class^="md-select-menu-container"]');
 
 
-    // shift type checkboxes
+    // checkboxes + radio buttons
 
     chkboxGrpShiftType = new CheckboxGroupField('[automation-id="interested-shift-types-answer"]');
-
-    // work experience radio buttons
  
     radioGrpWorkExperience = new RadioButtonGroupField('[automation-id="please-select-your-amount-of-licensed-work-experience-below-answer"]');
 

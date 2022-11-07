@@ -19,7 +19,11 @@ describe('Careers Login Page', () => {
         // TODO: add check for snackbar popup
     });
 
-    // TODO: add test for invalid username
+    xit('should fail to login with invalid email', async () => {
+        await LoginPage.login(browser.config.badUser, browser.config.badPass);
+        await expect(LoginPage.btnSubmit).toBeExisting();
+        // TODO: add check for snackbar popup
+    });
 });
 
 

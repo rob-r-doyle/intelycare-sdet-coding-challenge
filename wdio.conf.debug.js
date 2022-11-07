@@ -5,6 +5,7 @@ exports.config = {
     ************************/
     goodUser: 'rrd-test@mailinator.com',
     goodPass: 'ForTesting0nly!',
+    badUser: 'bogus@mailinator.com',
     badPass: 'SuperSecretPassword!',
     phone: '7589577506',
     zipCode: '02090',
