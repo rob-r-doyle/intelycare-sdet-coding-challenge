@@ -1,10 +1,7 @@
-import Field from './field'
+import GroupField from './group-field'
 
-export default class CheckboxGroupField extends Field {
+export default class CheckboxGroupField extends GroupField {
 
-    async checkboxByIndex(index) {
-        return await this.field.$$('md-checkbox')[index];
-    }
+    childClass = 'md-checkbox'
 
-    // TODO: Implement checkboxByLabel
 }

@@ -1,10 +1,7 @@
-import Field from './field'
+import GroupField from './group-field'
 
-export default class RadioButtonGroupField extends Field {
+export default class RadioButtonGroupField extends GroupField {
 
-    async buttonByIndex(index) {
-        return await this.field.$$('md-radio-button')[index];
-    }
+    childClass = 'md-radio-button'
 
-    // TODO: implement buttonByLabel
 }

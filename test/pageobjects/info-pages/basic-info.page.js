@@ -1,96 +1,81 @@
+import LoginPage from '../login.page'
+import ConfirmPhonePage from './confirm-phone.page'
 import Page from '../page';
 
 import CheckboxGroupField from '../fields/checkbox-group.field'
+import DropdownOverlayField from '../fields/dropdown-overlay.field'
 import RadioButtonGroupField from '../fields/radio-button-group.field'
 
 class BasicInfoPage extends Page {
 
     /**
-    * define selectors
+    * selectors
     */
+
+    get container() {
+        return $('[automation-id="basic-info"]');
+    }
 
     // text inputs
 
     get inputFirstName() {
-        return $('[automation-id="first-name-answer"]');
+        return this.container.$('[automation-id="first-name-answer"]');
     }
 
     get inputLastName() {
-        return $('[automation-id="last-name-answer"]');
+        return this.container.$('[automation-id="last-name-answer"]');
     }
 
     get inputMobile() {
-        return $('[automation-id="mobile-answer"');
+        return this.container.$('[automation-id="mobile-answer"');
     }
 
     get inputZipCode() {
-        return $('[automation-id="zip-code-answer"');
+        return this.container.$('[automation-id="zip-code-answer"');
     }
 
     // qualifications dropdown
 
     get dropdownQualifications() {
-        return $('md-select[id="select_10"]');
+        return this.container.$('md-select');
     }
+
+    ddOverlayQualifications = new DropdownOverlayField('[class^="md-select-menu-container"]');
+
 
     // shift type checkboxes
 
-    // ideally this would be private - don't know JS syntax well enough to implement
-    shiftType = new CheckboxGroupField('[automation-id="interested-shift-types-answer"]');
-
-    get chkboxGrpShiftType() {
-        return this.shiftType.field;
-    }
-
-    get chkboxDayShifts() {
-        return this.shiftType.checkboxByIndex(0);
-    }
-
-    get chkboxEveningShifts() {
-        return this.shiftType.checkboxByIndex(1);
-    }
-
-    get chkboxOvernightShifts() {
-        return this.shiftType.checkboxByIndex(2);
-    }
-
-    get chkboxWeekendShifts() {
-        return this.shiftType.checkboxByIndex(3);
-    }
-
-    get chkboxWeekdayShifts() {
-        return this.shiftType.checkboxByIndex(4);
-    }
+    chkboxGrpShiftType = new CheckboxGroupField('[automation-id="interested-shift-types-answer"]');
 
     // work experience radio buttons
-
-    // ideally this would be private - don't know JS syntax well enough to implement
-    workExperience = new RadioButtonGroupField('[automation-id="please-select-your-amount-of-licensed-work-experience-below-answer"]');
-
-    get radioGrpWorkExperience() {
-        return this.workExperience.field;
-    }
-
-    get radio03Months() {
-        return this.workExperience.buttonByIndex(0);
-    }
-
-    get radio46Months() {
-        return this.workExperience.buttonByIndex(1);
-    }
-
-    get radio6PlusMonths() {
-        return this.workExperience.buttonByIndex(2);
-    }
+ 
+    radioGrpWorkExperience = new RadioButtonGroupField('[automation-id="please-select-your-amount-of-licensed-work-experience-below-answer"]');
 
     // misc.
+    // TODO: add objects for legalese links
 
     get chkboxTermsAccept() {
-        return $('[automation-id="termsAccept-answer"]');
+        return this.container.$('[automation-id="termsAccept-answer"]');
     }
 
     get buttonContinue() {
         return $('button[id="AP_Basic_Info_continue"');
+    }
+
+
+    /**
+     * overwrite inherited options
+     */
+    async open() {
+        await LoginPage.open();
+        await LoginPage.login();
+
+        // Add a check here to skip back to Basic Info if Confirm Phone comes up instead
+        if (await ConfirmPhonePage.inputConfirmationCode.isVisible) {
+            await ConfirmPhonePage.buttonUpdateNumber.click();
+        }
+
+        await expect(this.buttonContinue).toBeExisting();
     }
 }
 

@@ -5,7 +5,7 @@ export default class Field {
         this.identifier = identifier
     }
 
-    get field() {
+    get container() {
         return $(this.identifier);
     }
 }
