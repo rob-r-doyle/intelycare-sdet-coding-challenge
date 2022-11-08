@@ -39,6 +39,15 @@ exports.config = {
     exclude: [
         // 'path/to/excluded/files'
     ],
+    // Group specific tests into suites
+    suites: {
+        login: [
+            './test/specs/login/*.e2e.js',
+        ],
+        ungrouped: [
+            './test/specs/*.e2e.js',
+        ],
+    },
     //
     // ============
     // Capabilities
